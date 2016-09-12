@@ -32,9 +32,7 @@ img {
   float: left;
   padding: 1em;
   width: 100%;
-  min-height: 1px;
-  background: lightblue;
-  border: 1px solid #999999; }
+  min-height: 1px; }
 
 @media only screen and (min-width: 30em) {
   .wrapper {
@@ -76,5 +74,27 @@ img {
 
   .column-12 {
     width: 100%; } }
+.primary-color {
+  height: 50px; }
+
+.primary-colors .column-3:nth-child(2) .primary-color {
+  background-color: mintcream; }
+.primary-colors .column-3:nth-child(2):after {
+  content: "mintcream"; }
+
+.primary-colors .column-3:nth-child(3) .primary-color {
+  background-color: teal; }
+.primary-colors .column-3:nth-child(3):after {
+  content: "teal"; }
+
+.primary-colors .column-3:nth-child(4) .primary-color {
+  background-color: gold; }
+.primary-colors .column-3:nth-child(4):after {
+  content: "gold"; }
+
+.primary-colors .column-3:nth-child(5) .primary-color {
+  background-color: tomato; }
+.primary-colors .column-3:nth-child(5):after {
+  content: "tomato"; }
 
 /*# sourceMappingURL=styles.css.map */

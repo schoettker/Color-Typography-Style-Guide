@@ -1,50 +1,18 @@
-@import "variables";
-@import "mixins";
+@import "grid";
 
-*,
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
-  @include border-box;
+$primary-colors: mintcream, teal, gold, tomato;
+
+.primary-color {
+  height: 50px;
 }
 
-img {
-  width: auto;
-  max-width: 100%;
-  height: auto !important; 
-}
-
-.wrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.wrapper,
-.row {
-  @extend %clearfix;
-
-}
-
-[class*="column-"] {
-  float: left;
-  padding: 1em;
-  width: 100%;
-  min-height: 1px;
-  background: lightblue;
-  border: 1px solid lighten(black, 60%);
-}
-
-@media #{$breakpoint-medium} {
-  .wrapper {
-    width: 95%;
-    max-width: $grid-max-width;
-  }
-  @for $i from 1 through $grid-columns {
-    .column-#{$i} {
-      width: 100% / $grid-columns * $i;
+@for $i from 1 through 4 {
+  .primary-colors .column-3:nth-child(#{$i+1}){
+    .primary-color {
+      background-color: nth($primary-colors, $i);
     }
+    &:after {
+        content: "#{nth($primary-colors, $i)}";
+      }
   }
-}
-
-
+ }
