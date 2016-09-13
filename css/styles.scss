@@ -1,10 +1,14 @@
 @import "grid";
 
-$primary-colors: mintcream, teal, gold, tomato;
-$palette-height: 100px;
 body {
   background-color: #eee;
+  color: #333;
 }
+$palette-height: 100px;
+
+// Primary Colors
+$primary-colors: mintcream, teal, gold, tomato;
+
 .primary-color {
   height: $palette-height;
 }
@@ -16,9 +20,14 @@ body {
     }
     &:after {
         content: "#{nth($primary-colors, $i)}";
+        float: right;
+        text-transform: capitalize;
     }
   }
  }
+
+ // Tints & Tones
+
  .lighter,
  .normal,
  .darker {
@@ -37,6 +46,54 @@ body {
     }
     .darker {
       background-color: darken(nth($primary-colors, $i), 5%);
+    }
+  }
+}
+
+// Generated Colors 
+$mix-height: ($palette-height / 2);
+.mix {
+  height: $mix-height;
+  text-align: center;
+  padding-top: $mix-height / 2.5;
+  margin-top: 2em;
+}
+@for $i from 1 through 4 {
+
+  .generated .column-3:nth-child(#{$i+2}) {
+    .primary-color:before {
+      content: "#{nth($primary-colors, $i)}";
+    }
+    .primary-color {
+      background-color: nth($primary-colors, $i);
+      text-align: center;
+      padding-top: ($palette-height / 2.5);
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+    .mix:nth-child(2) {
+      background-color: mix(nth($primary-colors, 1), nth($primary-colors, $i), 65%);
+      &:after {
+        content: "With 65% #{nth($primary-colors, 1)}";
+      }
+    }
+    .mix:nth-child(3) {
+      background-color: mix(nth($primary-colors, 2), nth($primary-colors, $i), 65%);
+      &:after {
+        content: "With 65% #{nth($primary-colors, 2)}";
+      }
+    }
+    .mix:nth-child(4) {
+      background-color: mix(nth($primary-colors, 3), nth($primary-colors, $i), 65%);
+      &:after {
+        content: "With 65% #{nth($primary-colors, 3)}";
+      }
+    }
+    .mix:nth-child(5) {
+      background-color: mix(nth($primary-colors, 4), nth($primary-colors, $i), 65%);
+      &:after {
+        content: "With 65% #{nth($primary-colors, 4)}";
+      }
     }
   }
 }
