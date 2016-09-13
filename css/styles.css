@@ -34,11 +34,47 @@ img {
   width: 100%;
   min-height: 1px; }
 
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 32em) {
   .wrapper {
     width: 95%;
     max-width: 65em; }
 
+  .column-1 {
+    width: 50%; }
+
+  .column-2 {
+    width: 50%; }
+
+  .column-3 {
+    width: 50%; }
+
+  .column-4 {
+    width: 50%; }
+
+  .column-5 {
+    width: 50%; }
+
+  .column-6 {
+    width: 50%; }
+
+  .column-7 {
+    width: 50%; }
+
+  .column-8 {
+    width: 50%; }
+
+  .column-9 {
+    width: 50%; }
+
+  .column-10 {
+    width: 50%; }
+
+  .column-11 {
+    width: 50%; }
+
+  .column-12 {
+    width: 50%; } }
+@media only screen and (min-width: 50em) {
   .column-1 {
     width: 8.33333%; }
 
