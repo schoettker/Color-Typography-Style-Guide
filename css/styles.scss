@@ -1,9 +1,12 @@
 @import "grid";
 
 $primary-colors: mintcream, teal, gold, tomato;
-
+$palette-height: 100px;
+body {
+  background-color: #eee;
+}
 .primary-color {
-  height: 50px;
+  height: $palette-height;
 }
 
 @for $i from 1 through 4 {
@@ -13,6 +16,27 @@ $primary-colors: mintcream, teal, gold, tomato;
     }
     &:after {
         content: "#{nth($primary-colors, $i)}";
-      }
+    }
   }
  }
+ .lighter,
+ .normal,
+ .darker {
+   @extend .primary-color;
+   display: inline-block;
+   width: (100% / 3);
+   float: left;
+ }
+@for $i from 1 through 4 {
+  .tones .column-3:nth-child(#{$i+2}) {
+    .lighter {
+      background-color: lighten(nth($primary-colors, $i), 5%);
+    }
+    .normal {
+      background-color: nth($primary-colors, $i);
+    }
+    .darker {
+      background-color: darken(nth($primary-colors, $i), 5%);
+    }
+  }
+}
