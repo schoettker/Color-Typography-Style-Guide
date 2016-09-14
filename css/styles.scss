@@ -129,3 +129,20 @@ h2.secondary-typeface {
     color: nth($primary-colors, 1);
   }
 }
+
+.samples {
+  h1, h3, h5 {
+    font-family: $secondary-typeface;
+  }
+  h2, h4, h6, p {
+    font-family: $primary-typeface;
+  }
+  h2, h3, h6 {
+    text-transform: uppercase;
+  }
+}
+@for $i from 1 through 4 {
+  .sample:nth-child(#{$i}){
+    color: nth($primary-colors, $i);
+  }
+}
