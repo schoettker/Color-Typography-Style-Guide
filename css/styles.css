@@ -312,4 +312,45 @@ body {
   .generated .column-3:nth-child(6) .mix:nth-child(5):after {
     content: "With 65% tomato"; }
 
+#description:after {
+  content: "Open Sans is used as primary typeface and Bree Serif is used as an accent for headings and other special purposes."; }
+
+h1.primary-typeface:after {
+  content: "Open Sans";
+  font-family: Open Sans; }
+
+h1.secondary-typeface:after {
+  content: "Bree Serif";
+  font-family: Bree Serif; }
+
+h2.primary-typeface {
+  font-family: "Open Sans"; }
+
+h2.secondary-typeface {
+  font-family: "Bree Serif"; }
+
+.demo:nth-child(1) {
+  color: mintcream; }
+
+.demo:last-child {
+  color: mintcream; }
+
+.demo:nth-child(2) {
+  color: teal; }
+
+.demo:last-child {
+  color: mintcream; }
+
+.demo:nth-child(3) {
+  color: gold; }
+
+.demo:last-child {
+  color: mintcream; }
+
+.demo:nth-child(4) {
+  color: tomato; }
+
+.demo:last-child {
+  color: mintcream; }
+
 /*# sourceMappingURL=styles.css.map */

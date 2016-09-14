@@ -97,3 +97,35 @@ $mix-height: ($palette-height / 2);
     }
   }
 }
+// Typography
+$primary-typeface: "Open Sans";
+$secondary-typeface: "Bree Serif";
+@mixin typeface-heading($type) {
+   &:after {
+      content: "#{$type}";
+      font-family: $type;
+    }
+}
+#description:after {
+  content: "#{$primary-typeface} is used as primary typeface and #{$secondary-typeface} is used as an accent for headings and other special purposes.";
+}
+h1.primary-typeface {
+   @include typeface-heading(#{$primary-typeface});
+}
+h1.secondary-typeface {
+  @include typeface-heading(#{$secondary-typeface});
+}
+h2.primary-typeface {
+  font-family: $primary-typeface;
+}
+h2.secondary-typeface {
+  font-family: $secondary-typeface;
+}
+@for $i from 1 through 4 {
+  .demo:nth-child(#{$i}) {
+    color: nth($primary-colors, $i);
+  }
+  .demo:last-child {
+    color: nth($primary-colors, 1);
+  }
+}
